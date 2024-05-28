@@ -1,0 +1,46 @@
+hr {
+    margin: 10px;
+}
+.portfolio {
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 80px;
+}
+
+.portfolio-item {
+    margin: 15px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-item .description {
+    padding: 10px;
+    text-align: center;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .portfolio {
+        flex-direction: column;
+    }
+}
