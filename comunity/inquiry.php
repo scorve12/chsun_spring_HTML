@@ -1,3 +1,7 @@
+<?php
+    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -17,7 +21,7 @@
 </head>
 
 <body>
-    <header id="headerWrap">
+    <!-- <header id="headerWrap">
         <nav id="gnbWrap">
             <ul class="gnb">
                 <li>
@@ -55,7 +59,7 @@
                 </li>
             </ul>
         </nav>
-    </header>
+    </header> -->
     <!--코드 작성-->
     <!--코드 작성-->
     <footer>

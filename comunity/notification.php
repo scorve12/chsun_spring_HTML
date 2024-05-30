@@ -1,3 +1,7 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
+include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
