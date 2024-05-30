@@ -1,6 +1,35 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
 include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+
+function is_user_logged_in() {
+  return isset($_SESSION['userid']);
+}
+
+function is_user_admin() {
+  return ($_SESSION['role'] == 'ADMIN');
+}
+
+// 정렬
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 'idx';
+
+// sql 정렬
+function get_sort_query($sort) {
+  $query = "SELECT * FROM inform_board_table";
+
+  $query .= " ORDER BY ";
+
+  if ($sort === 'view') {
+    $query .= "view DESC";
+  } else {
+    $query .= "idx DESC";
+  }
+
+  return $query;
+}
+
+$sql = get_sort_query($sort);
+$result = mc($sql);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -15,55 +44,17 @@ include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-
-
     <link rel="stylesheet" href="/chsun_spring_HTML/css/styles.css">
     <link rel="stylesheet" href="/chsun_spring_HTML/css/nav.css">
     <link rel="stylesheet" href="/chsun_spring_HTML/css/footer.css">
     <link rel="stylesheet" href="/chsun_spring_HTML/css/notification.css">
+    <!-- jQuery 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI 라이브러리 로드 -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 </head>
 
 <body>
-    <!-- <header id="headerWrap">
-        <nav id="gnbWrap">
-            <ul class="gnb">
-                <li>
-                    <a href="/chsun_spring_HTML/index.php"><b>원점으로</b></a>
-                    <div class="sub-wrap">
-                        <ul>
-                            <li><a href="/chsun_spring_HTML/main/about.html">팀소개</a></li>
-                            <li><a href="/chsun_spring_HTML/main/contact.html">작업물 소개</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#"><b>계산기</b></a>
-                    <div class="sub-wrap">
-                        <ul>
-                            <li> <a href="/chsun_spring_HTML/calculator/synthesis.html">종합소득세 계산</a></li>
-                            <li><a href="/chsun_spring_HTML/calculator/hourly.html">시급 계산</a></li>
-                            <li><a href="/chsun_spring_HTML/calculator/retirement.html">퇴직금 계산</a></li>
-                            <li><a href="/chsun_spring_HTML/calculator/salary.html">급여 계산</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#"><b>이야기 마당</b></a>
-                    <div class="sub-wrap">
-                        <ul>
-                            <li> <a href="/chsun_spring_HTML/comunity/community.html">자유게시판</a></li>
-                            <li><a href="/chsun_spring_HTML/comunity/notification.html">공지사항</a></li>
-                            <li><a href="/chsun_spring_HTML/comunity/inquiry.html">문의 사항</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="/chsun_spring_HTML/login/login.html"><b>로그인</b></a>
-                </li>
-            </ul>
-        </nav>
-    </header> -->
-    <!--코드 작성-->
     <div id="wrap">
         <div id="board_area">
             <h1>공지사항</h1>
@@ -80,37 +71,26 @@ include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
                         <th width="100">조회수</th>
                     </tr>
                 </thead>
-                <!--<?php
-                  while ($board = $result->fetch_array()) {
-                    $title = $board["title"];
-                    if (strlen($title) > 30) {
-                      $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8") . "...", $board["title"]);
-                    }
-              ?>-->
                 <tbody>
+                    <?php while ($board = $result->fetch_array()) { 
+                        $title = $board["title"];
+                        if (strlen($title) > 30) {
+                            $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8") . "...", $board["title"]);
+                        }
+                    ?>
                     <tr class="list_board">
-                        <td width="70">
-                            <!--<?php echo $board['idx']; ?>-->
-                        </td>
-                        <td width="500"><a href="inform_board_detail.php?idx=<?php echo $board[" idx"];?>">
-                                <!--<?php echo $title;?>-->
-                            </a></td>
-                        <td width="120">
-                            <!--<?php echo $board['name']?>-->
-                        </td>
-                        <td width="100">
-                            <!--<?php echo $board['view']; ?>-->
-                        </td>
+                        <td width="70"><?php echo $board['idx']; ?></td>
+                        <td width="500"><a href="inform_board_detail.php?idx=<?php echo $board["idx"];?>"><?php echo $title;?></a></td>
+                        <td width="120"><?php echo $board['name']?></td>
+                        <td width="100"><?php echo $board['view']; ?></td>
                     </tr>
+                    <?php } ?>
                 </tbody>
-                <!--<?php } ?>-->
             </table>
             <div id="write_btn">
-                <!--<?php
-            if (is_user_admin()) {
-              ?>
-            <a href="inform_board_write.php"><button>글쓰기</button></a>
-            <?php } ?>-->
+                <?php if (is_user_admin()) { ?>
+                    <a href="inform_board_write.php"><button>글쓰기</button></a>
+                <?php } ?>
             </div>
         </div>
         <div id="search_box">
@@ -124,7 +104,6 @@ include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
             </form>
         </div>
     </div>
-    <!--코드 작성-->
     <footer>
         <div class="contact-info">
             <p>(61452)광주광역시 동구 필문대로 309(서석동, 조선대학교)</p>
@@ -145,4 +124,34 @@ include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
             li.addEventListener('mouseleave', () => subMenu.classList.remove('active'));
         }
     });
+
+    $(document).ready(function() {
+  var currentSortBy = "idx"; // 기본 정렬 기준은 "순번순"
+  var currentSortDir = "desc"; // 기본 정렬 방식은 내림차순
+
+  $(".sort-btn").click(function() {
+    var sortBy = $(this).data("sortby");
+
+    // 정렬 기준이 변경되었을 경우, 정렬 방식을 초기화하고 오름차순으로 변경
+    if (currentSortBy !== sortBy) {
+      currentSortBy = sortBy;
+      currentSortDir = "asc";
+    } else {
+      // 정렬 기준이 이미 선택된 경우, 정렬 방식을 토글
+      currentSortDir = currentSortDir === "asc" ? "desc" : "asc";
+    }
+
+    // 정렬 방식에 따라 화살표 모양 변경
+    $(".sort-btn").find("span").html("&darr;");
+    if (currentSortDir === "asc") {
+      $(this).find("span").html("&uarr;");
+    } else {
+      $(this).find("span").html("&darr;");
+    }
+
+    // Redirect to the sorted URL
+    window.location.href = "inform_board.php?sort=" + currentSortBy + "&sortdir=" + currentSortDir;
+  });
+});
 </script>
+

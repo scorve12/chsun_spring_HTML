@@ -21,7 +21,6 @@
         } else {
           $query .= "idx DESC";
         }
-      
         return $query;
       }
       
@@ -109,7 +108,6 @@
                         <th width="120">글쓴이</th>
                         <th width="100">조회수</th>
                         <th width="100">추천</th>
-                        <?php echo $_SERVER['DOCUMENT_ROOT']?> 
                     </tr>
                 </thead>
                 <!--<?php

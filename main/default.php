@@ -46,8 +46,8 @@
                     <div class="sub-wrap">
                         <ul>
                             <li><a href="/chsun_spring_HTML/comunity/free_board/free_board.php">자유게시판</a></li>
-                            <li><a href="/chsun_spring_HTML/comunity/notification.php">공지사항</a></li>
-                            <li><a href="/chsun_spring_HTML/comunity/inquiry.php">문의 사항</a></li>
+                            <li><a href="/chsun_spring_HTML/comunity/inform/inform_board.php">공지사항</a></li>
+                            <li><a href="/chsun_spring_HTML/comunity/qna/qna_board.php">문의 사항</a></li>
                         </ul>
                     </div>
                 </li>
@@ -85,4 +85,36 @@
             li.addEventListener('mouseleave', () => subMenu.classList.remove('active'));
         }
     });
+</script>
+
+<script>
+$(document).ready(function() {
+  var currentSortBy = "idx"; // 기본 정렬 기준은 "순번순"
+  var currentSortDir = "desc"; // 기본 정렬 방식은 내림차순
+
+  $(".sort-btn").click(function() {
+    var sortBy = $(this).data("sortby");
+
+    // 정렬 기준이 변경되었을 경우, 정렬 방식을 초기화하고 오름차순으로 변경
+    if (currentSortBy !== sortBy) {
+      currentSortBy = sortBy;
+      currentSortDir = "asc";
+    } else {
+      // 정렬 기준이 이미 선택된 경우, 정렬 방식을 토글
+      currentSortDir = currentSortDir === "asc" ? "desc" : "asc";
+    }
+
+    // 정렬 방식에 따라 화살표 모양 변경
+    $(".sort-btn").find("span").html("&darr;");
+    if (currentSortDir === "asc") {
+      $(this).find("span").html("&uarr;");
+    } else {
+      $(this).find("span").html("&darr;");
+    }
+
+    // Redirect to the sorted URL
+    window.location.href = "inform_board.php?sort=" + currentSortBy + "&sortdir=" + currentSortDir;
+  });
+});
+
 </script>
