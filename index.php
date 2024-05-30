@@ -1,3 +1,7 @@
+<?php
+    include 'header.php';
+    include 'main/default.php';
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -18,11 +22,11 @@
 </head>
 
 <body>
-    <header id="headerWrap">
+    <!-- <header id="headerWrap">
         <nav id="gnbWrap">
             <ul class="gnb">
                 <li>
-                    <a href="./index.html"><b>원점으로</b></a>
+                    <a href="./index.php"><b>원점으로</b></a>
                     <div class="sub-wrap">
                         <ul>
                             <li><a href="./main/about.html">팀소개</a></li>
@@ -52,11 +56,11 @@
                     </div>
                 </li>
                 <li>
-                    <a href="../login/login.html"><b>로그인</b></a>
+                    <a href="login/login.html"><b>로그인</b></a>
                 </li>
             </ul>
         </nav>
-    </header>
+    </header> -->
 
     <div class="wrap">
         <div id="showScroll" class="container">
@@ -150,7 +154,7 @@
         </div>
     </div>
 
-        <footer>
+        <!-- <footer>
             <div class="contact-info">
                 <p>(61452)광주광역시 동구 필문대로 309(서석동, 조선대학교)</p>
                 <p>TEL. 062-230-6046 FAX. 062-232-0504</p>
@@ -160,7 +164,7 @@
                 <p>과제 : 자율설계학기제</p>
                 <p>마감 : 6월 8일</p>
             </div>       
-        </footer>
+        </footer> -->
    
     
 </body>

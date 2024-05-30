@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -21,7 +22,7 @@
         <nav id="gnbWrap">
             <ul class="gnb">
                 <li>
-                    <a href="../index.html"><b>원점으로</b></a>
+                    <a href="../index.php"><b>원점으로</b></a>
                     <div class="sub-wrap">
                         <ul>
                             <li><a href="../main/about.html">팀소개</a></li>
@@ -33,10 +34,10 @@
                     <a href="#"><b>계산기</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li> <a href="../calculator/synthesis.html">종합소득세 계산</a></li>
-                            <li><a href="../calculator/hourly.html">시급 계산</a></li>
-                            <li><a href="../calculator/retirement.html">퇴직금 계산</a></li>
-                            <li><a href="../calculator/salary.html">급여 계산</a></li>
+                            <li> <a href="calculator/synthesis.html">종합소득세 계산</a></li>
+                            <li><a href="calculator/hourly.html">시급 계산</a></li>
+                            <li><a href="calculator/retirement.html">퇴직금 계산</a></li>
+                            <li><a href="calculator/salary.html">급여 계산</a></li>
                         </ul>
                     </div>
                 </li>
@@ -44,14 +45,18 @@
                     <a href="#"><b>이야기 마당</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li> <a href="../comunity/community.html">자유게시판</a></li>
-                            <li><a href="../comunity/notification.html">공지사항</a></li>
-                            <li><a href="../comunity/inquiry.html">문의 사항</a></li>
+                            <li> <a href="/chsun_spring_HTML/comunity/community.php">자유게시판</a></li>
+                            <li><a href="comunity/notification.html">공지사항</a></li>
+                            <li><a href="comunity/inquiry.html">문의 사항</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="../login/login.html"><b>로그인</b></a>
+                    <?php if (isset($_SESSION['userid'])): ?>
+                        <a href="login/logout_action.php" >로그아웃</a>
+                    <?php else: ?>
+                        <a href="login/login.html"><b>로그인</b></a>
+                    <?php endif; ?>
                 </li>
             </ul>
         </nav>

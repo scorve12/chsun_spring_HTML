@@ -1,3 +1,7 @@
+<?php
+    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -5,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128|VT323" rel="stylesheet">
-    <title>당백전_개인사업자를 위한 사이트</title>
+    <title>자유게시판</title>
     <!-- font, css, style 링크-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +19,18 @@
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/community.css">
+    <!-- jQuery 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI 라이브러리 로드 -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 </head>
 
 <body>
-    <header id="headerWrap">
+    <!-- <header id="headerWrap">
         <nav id="gnbWrap">
             <ul class="gnb">
                 <li>
-                    <a href="../index.html"><b>원점으로</b></a>
+                    <a href="../index.php"><b>원점으로</b></a>
                     <div class="sub-wrap">
                         <ul>
                             <li><a href="../main/about.html">팀소개</a></li>
@@ -56,7 +64,7 @@
                 </li>
             </ul>
         </nav>
-    </header>
+    </header> -->
     <!--코드 작성-->
     <div id="wrap">
         <div id="board_area">
@@ -74,6 +82,7 @@
                         <th width="120">글쓴이</th>
                         <th width="100">조회수</th>
                         <th width="100">추천</th>
+                        <?php echo $_SERVER['DOCUMENT_ROOT']?> 
                     </tr>
                 </thead>
                 <!--<?php
@@ -140,6 +149,7 @@
 
 
 </body>
+
 <script>
     document.querySelectorAll('.gnb > li').forEach(li => {
         const subMenu = li.querySelector('.sub-wrap');
