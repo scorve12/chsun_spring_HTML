@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) == 1) {
         $_SESSION['idx'] = $row["seq"];
         if (isset($_SESSION['userid'])) {
 ?> <script>
-                location.replace("../index.php");
+                location.replace("/chsun_spring_HTML/index.php");
             </script>
         <?php
         } else {
