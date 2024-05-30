@@ -1,8 +1,8 @@
 <!-- header.php -->
 <?php
     session_start();
-    include $_SERVER['DOCUMENT_ROOT']."/db_con.php";
-    include $_SERVER['DOCUMENT_ROOT']."/config.php";
+    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/db_con.php";
+    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="ko">

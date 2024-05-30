@@ -1,6 +1,33 @@
 <?php
     include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
     include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+
+    //include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/db_con.php";
+    function is_user_logged_in() {
+        return isset($_SESSION['userid']);
+      }
+      
+      $sort = isset($_GET['sort']) ? $_GET['sort'] : 'idx';
+      
+      function get_sort_query($sort) {
+        $query = "SELECT * FROM free_board_table";
+      
+        $query .= " ORDER BY ";
+      
+        if ($sort === 'view') {
+          $query .= "view DESC";
+        } elseif ($sort === 'like_count') {
+          $query .= "like_count DESC";
+        } else {
+          $query .= "idx DESC";
+        }
+      
+        return $query;
+      }
+      
+      // 정렬된 리스트
+      $sql = get_sort_query($sort);
+      $result = mc($sql);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -97,7 +124,7 @@
                         <td width="70">
                             <?php echo $board['idx']; ?>
                         </td>
-                        <td width="500"><a href="free_board_detail.php?idx=<?php echo $board[" idx"];?>">
+                        <td width="500"><a href="free_board_detail.php?idx=<?php echo $board["idx"];?>">
                                 <?php echo $title;?>
                             </a></td>
                         <td width="120">
@@ -116,9 +143,9 @@
             <div id="write_btn">
                 <!--<?php
             if (is_user_logged_in()) {
-              ?>
+              ?>-->
                 <a href="free_board_write.php"><button>글쓰기</button></a>
-                <?php } ?>-->
+                <?php } ?>
             </div>
         </div>
         <div id="search_box">
@@ -131,7 +158,6 @@
                 <input type="text" name="search" size="40" required="required" /> <button>검색</button>
             </form>
         </div>
-        <a href="index.php"><button>메인화면으로</button></a>
     </div>
 
     <!--코드 작성-->

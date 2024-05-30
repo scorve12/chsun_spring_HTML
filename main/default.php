@@ -45,7 +45,7 @@
                     <a href="#"><b>이야기 마당</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li><a href="/chsun_spring_HTML/comunity/community.php">자유게시판</a></li>
+                            <li><a href="/chsun_spring_HTML/comunity/free_board/free_board.php">자유게시판</a></li>
                             <li><a href="/chsun_spring_HTML/comunity/notification.php">공지사항</a></li>
                             <li><a href="/chsun_spring_HTML/comunity/inquiry.php">문의 사항</a></li>
                         </ul>
