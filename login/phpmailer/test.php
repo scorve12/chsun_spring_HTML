@@ -50,7 +50,7 @@ $mail->SMTPAuth = true;
 $mail->Username = 'gunner07050@gmail.com';
 
 //Password to use for SMTP authentication
-$mail->Password = 'fasxpfqnokuobqgq';
+$mail->Password = '';
 
 //Set who the message is to be sent from
 //Note that with gmail you can only use your account address (same as `Username`)

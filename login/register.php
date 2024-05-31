@@ -21,7 +21,7 @@ function generate_verification_code() {
 
 function send_email_gmail($user_email, $user_name, $subject, $content) {
     $USER = 'gunner07050@gmail.com'; // 보내는 사람 이메일
-    $PASSWORD = 'fasxpfqnokuobqgq'; // 비밀번호
+    $PASSWORD = ''; // 비밀번호
    
     $mail = new PHPMailer(true);
     
