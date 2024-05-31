@@ -1,6 +1,6 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
-    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+    include $_SERVER['DOCUMENT_ROOT']."/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/main/default.php";
 
 // 사용자가 입력한 검색어와 검색 조건을 받아옴
 $keyword = $_GET['search'];

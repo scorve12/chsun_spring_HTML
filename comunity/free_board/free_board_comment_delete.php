@@ -1,6 +1,6 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
-    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+    include $_SERVER['DOCUMENT_ROOT']."/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/main/default.php";
 $rno = $_POST['rno']; //댓글 번호 
 $sql = mc("SELECT * from free_board_comment_table where idx='".$rno."'");//reply테이블에서 idx가 rno변수에 저장된 값을 찾음
 $reply = $sql->fetch_array();

@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
-    <link rel="stylesheet" href="/chsun_spring_HTML/css/styles.css">
-    <link rel="stylesheet" href="/chsun_spring_HTML/css/nav.css">
-    <link rel="stylesheet" href="/chsun_spring_HTML/css/footer.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
@@ -22,11 +22,11 @@
         <nav id="gnbWrap">
             <ul class="gnb">
                 <li>
-                    <a href="/chsun_spring_HTML/index.php"><b>원점으로</b></a>
+                    <a href="/index.php"><b>원점으로</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li><a href="/chsun_spring_HTML/main/about.html">팀소개</a></li>
-                            <li><a href="/chsun_spring_HTML/main/contact.html">작업물 소개</a></li>
+                            <li><a href="/main/about.html">팀소개</a></li>
+                            <li><a href="/main/contact.html">작업물 소개</a></li>
                         </ul>
                     </div>
                 </li>
@@ -34,10 +34,10 @@
                     <a href="#"><b>계산기</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li><a href="/chsun_spring_HTML/calculator/synthesis.html">종합소득세 계산</a></li>
-                            <li><a href="/chsun_spring_HTML/calculator/hourly.html">시급 계산</a></li>
-                            <li><a href="/chsun_spring_HTML/calculator/retirement.html">퇴직금 계산</a></li>
-                            <li><a href="/chsun_spring_HTML/calculator/salary.html">급여 계산</a></li>
+                            <li><a href="/calculator/synthesis.html">종합소득세 계산</a></li>
+                            <li><a href="/calculator/hourly.html">시급 계산</a></li>
+                            <li><a href="/calculator/retirement.html">퇴직금 계산</a></li>
+                            <li><a href="/calculator/salary.html">급여 계산</a></li>
                         </ul>
                     </div>
                 </li>
@@ -45,17 +45,17 @@
                     <a href="#"><b>이야기 마당</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li><a href="/chsun_spring_HTML/comunity/free_board/free_board.php">자유게시판</a></li>
-                            <li><a href="/chsun_spring_HTML/comunity/inform/inform_board.php">공지사항</a></li>
-                            <li><a href="/chsun_spring_HTML/comunity/qna/qna_board.php">문의 사항</a></li>
+                            <li><a href="/comunity/free_board/free_board.php">자유게시판</a></li>
+                            <li><a href="/comunity/inform/inform_board.php">공지사항</a></li>
+                            <li><a href="/comunity/qna/qna_board.php">문의 사항</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
                     <?php if (isset($_SESSION['userid'])): ?>
-                        <a href="/chsun_spring_HTML/login/logout_action.php" >로그아웃</a>
+                        <a href="/login/logout_action.php" >로그아웃</a>
                     <?php else: ?>
-                        <a href="/chsun_spring_HTML/login/login.html"><b>로그인</b></a>
+                        <a href="/login/login.html"><b>로그인</b></a>
                     <?php endif; ?>
                 </li>
             </ul>

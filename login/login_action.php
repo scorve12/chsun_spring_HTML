@@ -1,6 +1,6 @@
 <?php
 session_start();
-include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/db_con.php"; // 이거 나중에 폴더명 바꿔야 함
+include $_SERVER['DOCUMENT_ROOT']."/header.php";
 // $db_host = "localhost";
 // $db_id = "padmin";함
 // $db_pw = "0914kk";
@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) == 1) {
         $_SESSION['idx'] = $row["seq"];
         if (isset($_SESSION['userid'])) {
 ?> <script>
-                location.replace("/chsun_spring_HTML/index.php");
+                location.replace("/index.php");
             </script>
         <?php
         } else {

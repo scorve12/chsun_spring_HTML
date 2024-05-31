@@ -13,8 +13,8 @@
         history.back();</script>";
     }
 	*/
-    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
-    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+    include $_SERVER['DOCUMENT_ROOT']."/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/main/default.php";
 
 $bno = $_GET['idx'];
 

@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
-include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+include $_SERVER['DOCUMENT_ROOT']."/header.php";
+include $_SERVER['DOCUMENT_ROOT']."/main/default.php";
 
 function is_user_logged_in() {
   return isset($_SESSION['userid']);
@@ -44,10 +44,10 @@ $result = mc($sql);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="/chsun_spring_HTML/css/styles.css">
-    <link rel="stylesheet" href="/chsun_spring_HTML/css/nav.css">
-    <link rel="stylesheet" href="/chsun_spring_HTML/css/footer.css">
-    <link rel="stylesheet" href="/chsun_spring_HTML/css/notification.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/notification.css">
     <!-- jQuery 라이브러리 로드 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- jQuery UI 라이브러리 로드 -->

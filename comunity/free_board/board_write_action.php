@@ -1,6 +1,6 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/header.php";
-    include $_SERVER['DOCUMENT_ROOT']."/chsun_spring_HTML/main/default.php";
+    include $_SERVER['DOCUMENT_ROOT']."/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/main/default.php";
 //각 변수에 free_board_write.php에서 title, content, userid 저장
 $title = $_POST['title'];
 $content = $_POST['content'];
