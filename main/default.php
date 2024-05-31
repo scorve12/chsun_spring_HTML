@@ -55,7 +55,7 @@
                     <?php if (isset($_SESSION['userid'])): ?>
                         <a href="/login/logout_action.php" >로그아웃</a>
                     <?php else: ?>
-                        <a href="/login/login.html"><b>로그인</b></a>
+                        <a href="/login/login.php"><b>로그인</b></a>
                     <?php endif; ?>
                 </li>
             </ul>

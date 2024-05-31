@@ -1,3 +1,7 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT']."/header.php";
+?>
+ 
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -18,7 +22,7 @@
 </head>
 
 <body>
-    <header id="headerWrap">
+    <!-- <header id="headerWrap">
         <nav id="gnbWrap">
             <ul class="gnb">
                 <li>
@@ -56,7 +60,7 @@
                 </li>
             </ul>
         </nav>
-    </header>
+    </header> -->
     <!--코드 작성-->
     <div class="wrap">
     <div class="login-container">
