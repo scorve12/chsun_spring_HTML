@@ -8,6 +8,16 @@
     font-family: 'Arial', sans-serif;
 }
 
+#FormWrap{
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border:#333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 h1, h2 {
     color: #333;
 }
@@ -21,7 +31,7 @@ form {
 }
 
 label {
-    margin: 10px 0;
+    margin: 5px 0;
     display: block;
     font-weight: bold;
     color: #666;
@@ -32,7 +42,7 @@ input[type="date"],
 button {
     width: 100%;
     padding: 8px;
-    margin-top: 5px;
+    margin-top: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box; /* Adds padding and border to element's total width and height */
@@ -42,6 +52,7 @@ button {
     background-color: #5c67f2;
     color: white;
     font-size: 16px;
+    margin-top: 24px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -52,11 +63,22 @@ button:hover {
 }
 
 p {
-    color: #333;
+    
     font-size: 16px;
+    margin-top: 20px;
 }
 
-#weeklyResult, #annualResult, #wageResult, #retirementResult, #insuranceResult, #payResult, #salaryResult, #vatSumResult, #vatSupplyResult {
+/* Custom styles for the results sections */
+.result-container {
+    color: #333;
+    padding: 10px;
+    background-color: #e0e0e0; /* A subtle grey that matches the form backgrounds */
+    border-radius: 4px;
+    margin-top: 10px;
+    border: 1px solid #ccc; /* Consistent with the form border */
+}
+
+.result-container span {
     font-weight: bold;
-    color: #2171b5;
+    color: #2171b5; /* Keeping the color for results to make them pop slightly */
 }
