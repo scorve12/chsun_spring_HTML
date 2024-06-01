@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>강연준의 웹사이트</title>
+		<title>당백전_개인사업자를 위한 사이트</title>
 	</head>
 	<body>
 		<div>
