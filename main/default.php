@@ -10,8 +10,6 @@
     <!-- font, css, style 링크-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -75,6 +73,11 @@
         </div>
     </footer>
 
+    <?php if (isset($_SESSION['userid'])): ?>
+        <button class="fixed-button">
+        &#128100;
+    </button>
+    <?php endif; ?>
 
 </body>
 <script>
@@ -118,3 +121,19 @@ $(document).ready(function() {
 });
 
 </script>
+
+<style>
+    .fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+</style>
