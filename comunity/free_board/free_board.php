@@ -142,7 +142,7 @@
                 <!--<?php
             if (is_user_logged_in()) {
               ?>-->
-                <a href="free_board_write.php"><button>글쓰기</button></a>
+                <a href="free_board_write.php"><button class="write">글쓰기</button></a>
                 <?php } ?>
             </div>
         </div>
@@ -183,3 +183,17 @@
         }
     });
 </script>
+
+<style>
+    #write_btn{
+        text-align: center;
+    }
+
+    .write{
+        padding: 5px 10px;
+        border: none;
+        background-color: #4CAF50;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
