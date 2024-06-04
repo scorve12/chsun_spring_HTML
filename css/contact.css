@@ -18,7 +18,7 @@ h3 {
     font-size: 2rem;
 }
 
-p {
+.section p {
     padding: 20px;
     font-size: 1rem;
     line-height: 175%;
@@ -91,7 +91,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    text-align: justify;
+    text-align: center;
 }
 
 .progress-bar li {
@@ -113,7 +113,7 @@ main {
 }
 
 .section img {
-    width: 100%;
+    width: 80%;
     height: auto;
     border: 1px solid #000;
 }
