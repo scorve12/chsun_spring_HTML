@@ -43,10 +43,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/notification.css">
 </head>
 
 <body>
@@ -91,6 +91,7 @@
     </header> -->
     <!--코드 작성-->
     <!--코드 작성-->
+    <div id="wrap">
     <div id="board_area"> 
   <h1>QnA</h1>
     <table class="list-table">
@@ -137,9 +138,10 @@
         <option value="name">작성자</option>
         <option value="content">내용</option>
       </select>
-      <input type="text" name="search" size="40" required="required" /> <button>검색</button>
+      <input type="text" name="search" size="40" required="required" /> <button class="write">검색</button>
     </form>
     </div>
+      </div>
     <footer>
         <div class="contact-info">
             <p>(61452)광주광역시 동구 필문대로 309(서석동, 조선대학교)</p>
@@ -193,3 +195,17 @@
 });
 
 </script>
+
+<style>
+      #write_btn{
+        text-align: center;
+    }
+
+    .write{
+        padding: 5px 10px;
+        border: none;
+        background-color: #4CAF50;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>

@@ -89,7 +89,7 @@ $result = mc($sql);
             </table>
             <div id="write_btn">
                 <?php if (is_user_admin()) { ?>
-                    <a href="inform_board_write.php"><button>글쓰기</button></a>
+                    <a href="inform_board_write.php"><button class="write">글쓰기</button></a>
                 <?php } ?>
             </div>
         </div>
@@ -155,3 +155,17 @@ $result = mc($sql);
 });
 </script>
 
+
+<style>
+    #write_btn{
+        text-align: center;
+    }
+
+    .write{
+        padding: 5px 10px;
+        border: none;
+        background-color: #4CAF50;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>

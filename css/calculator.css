@@ -16,6 +16,11 @@
     border-radius: 8px;
     border:#333;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+}
+
+#FormContent{
+    
 }
 
 h1, h2 {
@@ -31,8 +36,9 @@ form {
 }
 
 label {
+    width: 20%;
     margin: 5px 0;
-    display: block;
+    display:inline-block;
     font-weight: bold;
     color: #666;
 }
@@ -40,12 +46,17 @@ label {
 input[type="number"],
 input[type="date"],
 button {
-    width: 100%;
+    display:inline-block;
+    width: 79%;
     padding: 8px;
     margin-top: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box; /* Adds padding and border to element's total width and height */
+}
+
+button {
+    width: 100%;
 }
 
 button {
