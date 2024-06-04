@@ -70,6 +70,7 @@ p {
 
 /* Custom styles for the results sections */
 .result-container {
+    text-align: center;
     color: #333;
     padding: 10px;
     background-color: #e0e0e0; /* A subtle grey that matches the form backgrounds */

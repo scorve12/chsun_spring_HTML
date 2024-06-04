@@ -149,9 +149,6 @@
                 <div id="coupons" class="coupons"></div>
             </div>
         </div>
-        <div id="showScroll" class="container">
-            sss
-        </div>
     </div>
 
         <footer>
