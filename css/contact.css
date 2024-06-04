@@ -1,27 +1,50 @@
-hr {
-    margin: 10px;
-}
-.portfolio {
-    padding-top: 80px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-top: 80px;
+@import url("https://fonts.googleapis.com/css?family=Hanken%20Grotesk:700|Hanken%20Grotesk:400");
+
+
+h1 {
+
+    font-size: 3.8rem;
+    /* 67.36px */
 }
 
-.portfolio-item {
-    margin: 15px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+h2 {
+    padding: 20px;
+    font-size: 2.158rem;
+    /* 50.56px */
 }
 
-.portfolio-item img {
-    width: 100%;
-    height: auto;
+h3 {
+    padding: 20px;
+    font-size: 2rem;
 }
 
-.portfolio-item .description {
-    padding: 10px;
+p {
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 175%;
+}
+
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Hanken Grotesk";
+    font-size: 1rem;
+    transition: all ease 0.1s;
+}
+
+body {
+   
+
+    margin: 0;
+}
+
+.progress-btn {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    opacity: 0;
+    text-wrap: nowrap;
+    display: block;
     text-align: center;
 }
 
