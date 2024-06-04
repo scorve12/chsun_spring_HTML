@@ -62,6 +62,27 @@
     <div id="wrap">
         <!-- Weekly Calculation Form -->
         <div id="FormWrap">
+            <h2>부가가치세 (합계금액)</h2>
+            <form id="vatSumForm">
+                <div id="FormContent">
+                    <label for="totalSum">합계금액:</label><input type="number" id="totalSum" name="totalSum" step="10000"
+                        value="0" required>
+                </div>
+                <button type="button" onclick="calculateVatSum()">계산</button>
+            </form>
+            <p class="result-container">결과: <span id="vatSumResult"></span></p>
+        </div>
+        <!-- VAT Calculation Form (Supply Price) -->
+        <div id="FormWrap">
+            <h2>부가가치세 (공급가액)</h2>
+            <form id="vatSupplyForm">
+                <label for="supplyPrice">공급가액:</label>
+                <input type="number" id="supplyPrice" name="supplyPrice" step="10000" value="0" required>
+                <button type="button" onclick="calculateVatSupply()">계산</button>
+            </form>
+            <p class="result-container">결과: <span id="vatSupplyResult"></span></p>
+        </div>
+        <div id="FormWrap">
             <h2>주휴수당 계산</h2>
             <form id="weeklyForm">
                 <div id="FormContent">
@@ -147,10 +168,8 @@
             <form id="retirementForm">
                 <label for="entryDtR">입사일:</label><input type="date" id="entryDtR" name="entryDtR" required>
                 <label for="calcDtR">퇴사일:</label><input type="date" id="calcDtR" name="calcDtR" required>
-                <label for="yearly">연간 상여금:</label><input type="number" id="yearly" name="yearly" step="10000" value="0"
-                    required>
-                <label for="annual">연차수당:</label><input type="number" id="annual" name="annual" step="10000" value="0"
-                    required>
+                <label for="yearly">연간 상여금:</label><input type="number" id="yearly" name="yearly" required>
+                <label for="annual">연차수당:</label><input type="number" id="annual" name="annual" required>
                 <button type="button" onclick="calculateRetirement()">계산</button>
             </form>
             <p class="result-container">결과: <span id="retirementResult"></span></p>
