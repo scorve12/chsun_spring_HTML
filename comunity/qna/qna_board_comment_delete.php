@@ -1,6 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/db_con.php";
-include 'config.php';
+include $_SERVER['DOCUMENT_ROOT']."/header.php";
 $rno = $_POST['rno']; //댓글 번호 
 $sql = mc("SELECT * from qna_board_comment_table where idx='".$rno."'");//reply테이블에서 idx가 rno변수에 저장된 값을 찾음
 $reply = $sql->fetch_array();

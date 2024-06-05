@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128|VT323" rel="stylesheet">
+    <title>당백전_개인사업자를 위한 사이트</title>
+    <!-- font, css, style 링크-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>Bulletin Board Details</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <header id="headerWrap">
+        <nav id="gnbWrap">
+            <ul class="gnb">
+                <li>
+                    <a href="/index.php"><b>원점으로</b></a>
+                    <div class="sub-wrap">
+                        <ul>
+                            <li><a href="/main/about.html">팀소개</a></li>
+                            <li><a href="/main/contact.html">작업물 소개</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><b>계산기</b></a>
+                    <div class="sub-wrap">
+                        <ul>
+                            <li> <a href="/calculator/synthesis.html">종합소득세 계산</a></li>
+                            <li><a href="/calculator/wiki.html">금융상식</a></li>
+                            <li><a href="/calculator/salary.html">직원 계산기</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><b>이야기 마당</b></a>
+                    <div class="sub-wrap">
+                        <ul>
+                            <li> <a href="/comunity/community.html">자유게시판</a></li>
+                            <li><a href="/comunity/notification.html">공지사항</a></li>
+                            <li><a href="/comunity/inquiry.html">문의 사항</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="/login/login.html"><b>로그인</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <style>
         #editImage {
             position: relative;
@@ -15,7 +66,6 @@
             position: relative;
             z-index: 1; /* `cancleImage`를 뒤로 보내기 위해 낮은 값을 설정 */
         }
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -28,15 +78,25 @@
             opacity: 0; /* 초기에 숨겨진 상태 */
             animation: fadeIn 1s forwards;
         }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            z-index: 1000;
+        }
         .container {
-            height: 50%;
+            height: 57%;
             width: 60%;
             padding: 20px;
             border-radius: 10px;
             background-image: url('bulletin_board_texture.jpg');
             background-size: cover;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: relative; /* 이를 기준으로 내부 위치 지정 */
+            opacity: 0; /* 초기에 숨겨진 상태 */
+            animation: fadeIn 1s forwards;
+ 
         }
         h1{
             margin: 10px 0;
@@ -68,23 +128,15 @@
         }
 
         .actions {
+            padding: 5px 5px;
             position: absolute; /* 상대적 위치 지정 */
-            bottom: -50px; /* 컨테이너 하단에서 20px 위에 위치 */
+            bottom: 100px; /* 컨테이너 하단에서 20px 위에 위치 */
             left: 20px; /* 좌측 정렬을 위해 추가 */
             width: calc(100% - 795px); /* 패딩을 고려한 너비 조정 */
             display: flex;
             align-items: center;
-            justify-content: space-between; /* 내부 요소 간 간격 조정 */
         }
-        .like-button {
-            padding: 80px 5px;
-            background-color: transparent;
-            color: red;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            outline: none; /* Remove button outline */
-        }
+
         .re-cancle {
             padding: 5px 5px;
             position: absolute; /* 상대적 위치 지정 */
@@ -95,10 +147,6 @@
         }
 
 
-        .view-count {
-            margin-left: 10px;
-            color: #777;
-        }
         /* 페이드 인 애니메이션 정의 */
         @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(-20px); }
@@ -145,14 +193,12 @@
         #fileUpload {
             display: none; /* 파일 입력 필드 숨기기 */
         }
-        .upload-icon, .submit-icon {
-            cursor: pointer; /* 아이콘에 마우스 오버 시 커서 변경 */
-            
-        }
-        .upload-icon-container {
+   
+        .upload-icon {
+            cursor: pointer;
             position: fixed; /* 뷰포트에 대해 고정 위치 */
-            bottom: 20px; /* 아래쪽 여백 */
-            left: 100px; /* 오른쪽 여백 */
+            bottom: 16px; /* 아래쪽 여백 */
+            left: 62px; /* 오른쪽 여백 */
         }
         .icons-container {
             display: flex;
@@ -161,17 +207,15 @@
             margin-top: 20px;
         }
     </style>
-</head>
-<body>
     <div class="container">
     
         <!-- 사용자 입력 폼 -->
-        <form id="postForm" style="margin-top: 20px;">
+        <form id="postForm" style="margin-top: 0px;">
             <label for="titleInput">제목:</label><br>
             <input type="text" id="titleInput" placeholder="새 제목을 입력하세요" rows="5" cols="100" ><br>
             <label for="contentInput">내용:</label><br>
             <textarea id="contentInput" placeholder="새 내용을 입력하세요" rows="10" cols="100"></textarea><br>
-            <i class="fas fa-lock"></i>
+            <i class="fas fa-lock" ></i>
             <input type="checkbox" id="updateCheckbox" onchange="updatePostCheckbox()">
         </form>
         <div class="re-cancle">
@@ -179,7 +223,7 @@
             <i id="okayIcon" class="fas fa-check icon-hover-grow" onclick="toggleImageSize('okayIcon')" style="font-size:24px; cursor:pointer;"></i>
         </div>
         
-        <form action="/upload" method="post" enctype="multipart/form-data" style="margin-bottom: 20px;">
+        <form action="/upload" method="post" enctype="multipart/form-data" style="margin-left: 40px;">
             <label for="fileUpload" class="upload-icon">
                 <i class="fas fa-upload"></i> 
             </label>
@@ -187,6 +231,8 @@
         </form>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
     </div>
+
+
 
     <script>
         function updatePost() {
@@ -229,9 +275,12 @@
              myImage.style.animation = ''; // 빈 문자열을 할당하여 CSS에서 정의된 애니메이션을 다시 적용
         }
 
+        document.querySelectorAll('.gnb > li').forEach(li => {
+        const subMenu = li.querySelector('.sub-wrap');
+        if (subMenu) {
+            li.addEventListener('mouseover', () => subMenu.classList.add('active'));
+            li.addEventListener('mouseleave', () => subMenu.classList.remove('active'));
+        }
+        });
 
-
-
-    </script>
-</body>
-</html>
+</script>

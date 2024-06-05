@@ -10,6 +10,7 @@ $error = $_FILES['file']['error'];
 $tmpfile = $_FILES['file']['tmp_name'];
 $filename = $_FILES['file']['name'];
 $folder = "./file/upload/".$filename;
+$datetime = date('Y-m-d H:i:s'); // 현재 시간 구하기
 
 // 파일 최대 용량을 초과시 에러 
 if( $error != UPLOAD_ERR_OK ){
@@ -26,7 +27,7 @@ move_uploaded_file($tmpfile, $folder);
 
 
 if($title && $content){
-    $sql = mc("INSERT INTO free_board_table(title,content,name,file) VALUES('$title', '$content', '$user', '$filename')"); 
+    $sql = mc("INSERT INTO free_board_table(title,content,name,file,date) VALUES('$title', '$content', '$user', '$filename', '$datetime')"); 
     echo "<script>
     alert('글쓰기 완료되었습니다.');
     location.href='free_board.php';</script>";

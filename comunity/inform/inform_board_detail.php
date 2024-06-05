@@ -45,7 +45,7 @@
         <div class="bulletin-details">
             <hr/>
             <br/>
-            <p><strong>날짜:</strong> 4 26, 2024</p>
+            <p><strong>날짜:</strong><?php echo $board['date']; ?></p>
             <p><strong>게시자:</strong> <?php echo $board['title']; ?></p>
             <p><?php echo nl2br("$board[content]"); ?></p>
         </div>
@@ -60,7 +60,7 @@
 					// 일반 사용자인 경우
 					if ($_SESSION['userid'] == $board['name']) { ?>
 						<!-- 일반유저인 경우 자신글에 대한 수정, 삭제 가능 -->
-						<li><a href="inform_board_modify.php?idx=<?php echo $board['idx']; ?>">수정</a></li>
+						<li style="width: 50px;"><a href="inform_board_modify.php?idx=<?php echo $board['idx']; ?>">수정</a></li>
 						<li><a href="inform_board_delete.php?idx=<?php echo $board['idx']; ?>">삭제</a></li>
 					</ul><?php
 				}
@@ -71,8 +71,6 @@
 		<?php if (!empty($board['file'])): ?>
 			<i class="fas fa-download"></i><p class="file">첨부파일 : <a href="file/upload/<?=$board['file'];?>" download><?=$board['file'];?></a></p>
 			<?php endif; ?>
-
-            
         </div>
     </div>
 
@@ -109,9 +107,6 @@
             myImage.offsetHeight; // Reflow 발생
              myImage.style.animation = ''; // 빈 문자열을 할당하여 CSS에서 정의된 애니메이션을 다시 적용
         }
-
-
-
 
     </script>
 </body>
@@ -161,7 +156,6 @@
         p{
             margin: 10px 0;
             padding: 1px;
-            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             opacity: 0; /* 초기에 숨겨진 상태 */
             animation: fadeIn 1s forwards; /* 페이드 인 애니메이션 적용 */

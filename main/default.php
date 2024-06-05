@@ -123,16 +123,28 @@ $(document).ready(function() {
 
 <style>
     .fixed-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: white;
-    font-size: 24px;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1000;
-}
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #333;
+        color: white;
+        font-size: 24px;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    /* 추가된 스타일 */
+    #contentWrap {
+        margin-top: 100px; /* 헤더 높이만큼 마진 추가 */
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 </style>
