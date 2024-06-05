@@ -196,7 +196,7 @@
    
         .upload-icon {
             cursor: pointer;
-            position: fixed; /* 뷰포트에 대해 고정 위치 */
+            /*position: fixed;  뷰포트에 대해 고정 위치 */
             bottom: 16px; /* 아래쪽 여백 */
             left: 62px; /* 오른쪽 여백 */
         }
