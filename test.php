@@ -26,8 +26,8 @@
                     <a href="/index.php"><b>원점으로</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li><a href="/main/about.html">팀소개</a></li>
-                            <li><a href="/main/contact.html">작업물 소개</a></li>
+                            <li><a href="/main/about.php">팀소개</a></li>
+                            <li><a href="/main/contact.php">작업물 소개</a></li>
                         </ul>
                     </div>
                 </li>
@@ -35,9 +35,9 @@
                     <a href="#"><b>계산기</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li> <a href="/calculator/synthesis.html">종합소득세 계산</a></li>
+                            <li> <a href="/calculator/synthesis.php">종합소득세 계산</a></li>
                             <li><a href="/calculator/wiki.html">금융상식</a></li>
-                            <li><a href="/calculator/salary.html">직원 계산기</a></li>
+                            <li><a href="/calculator/salary.php">직원 계산기</a></li>
                         </ul>
                     </div>
                 </li>

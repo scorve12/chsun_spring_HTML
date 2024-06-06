@@ -59,8 +59,8 @@
                     <a href="/index.php"><b>원점으로</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li><a href="/main/about.html">팀소개</a></li>
-                            <li><a href="/main/contact.html">작업물 소개</a></li>
+                            <li><a href="/main/about.php">팀소개</a></li>
+                            <li><a href="/main/contact.php">작업물 소개</a></li>
                         </ul>
                     </div>
                 </li>
@@ -68,10 +68,10 @@
                     <a href="#"><b>계산기</b></a>
                     <div class="sub-wrap">
                         <ul>
-                            <li> <a href="/calculator/synthesis.html">종합소득세 계산</a></li>
+                            <li> <a href="/calculator/synthesis.php">종합소득세 계산</a></li>
                             <li><a href="/calculator/hourly.html">시급 계산</a></li>
                             <li><a href="/calculator/retirement.html">퇴직금 계산</a></li>
-                            <li><a href="/calculator/salary.html">급여 계산</a></li>
+                            <li><a href="/calculator/salary.php">급여 계산</a></li>
                         </ul>
                     </div>
                 </li>
@@ -158,8 +158,8 @@
         </div>
     </div>
 
-    <!--코드 작성-->
-    <!-- <footer>
+   <!--코드 작성-->
+     <footer>
         <div class="contact-info">
             <p>(61452)광주광역시 동구 필문대로 309(서석동, 조선대학교)</p>
             <p>TEL. 062-230-6046 FAX. 062-232-0504</p>
@@ -169,7 +169,7 @@
             <p>과제 : 자율설계학기제</p>
             <p>마감 : 6월 8일</p>
         </div>
-    </footer> -->
+    </footer>
 
 
 </body>
