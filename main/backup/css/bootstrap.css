@@ -246,7 +246,7 @@ sup {
 
 a {
   color: var(--bs-link-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 a:hover {
   color: var(--bs-link-hover-color);
@@ -11266,7 +11266,7 @@ body {
 }
 
 .gap{
-  flex-basis: 10%;
+  flex-basis: 40%;
 }
 
 #calculatorSelect{

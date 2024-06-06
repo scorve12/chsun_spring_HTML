@@ -1,0 +1,68 @@
+/* General styles */
+.wrap {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Board area styles */
+#board_area {
+    width: 80%;
+    height: 90vh;
+    margin: 0 auto;
+    padding: 90px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Button area styles */
+#button_area {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+/* Sort buttons styles */
+.sort-btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Table styles */
+.list-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list-table th, .list-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.list-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Search box styles */
+#search_box {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#search_box select, #search_box input[type="text"] {
+    padding: 5px;
+}
+
+#search_box button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}

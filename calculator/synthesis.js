@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="tit-tx">업종선택</div>
     </div>
     <div class="cont-tx2">
-      <div>
+      <div class="cont-tx2">
         <div class="form-check">
           <input class="form-check-input" type="radio" name="flexRadioDefault" id="choice1" checked>
           <label class="form-check-label" for="flexRadioDefault1">
