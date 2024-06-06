@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
         <script>
             alert('회원가입에 성공하였습니다.');
-            location.replace("./login.html");
+            location.replace("./login.php");
         </script>
         <?php
         exit();
