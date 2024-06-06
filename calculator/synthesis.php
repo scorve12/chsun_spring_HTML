@@ -1,6 +1,5 @@
 <?php
-
-    //include $_SERVER['DOCUMENT_ROOT']."/main/default.php";
+    include $_SERVER['DOCUMENT_ROOT']."/main/default.php";
     ?>
 <!DOCTYPE html>
 <html lang="ko">
