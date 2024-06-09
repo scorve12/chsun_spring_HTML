@@ -104,7 +104,8 @@ footer {
     height: auto;
     min-height: 60px;
     font-size: 10px;
-    position: absolute;
+    position: fixed;
+    bottom: 0 auto;
     bottom: 0;
     width: 100%;
     z-index: 1000;
