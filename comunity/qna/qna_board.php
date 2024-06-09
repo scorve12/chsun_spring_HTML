@@ -4,27 +4,25 @@
 
     $is_user = ($_SESSION['userid'] && ($_SESSION['role'] == 'USER'));
 
-      
     function is_user_admin() {
-      return ($_SESSION['role'] == 'ADMIN');
-  }
+        return ($_SESSION['role'] == 'ADMIN');
+    }
     
     // 정렬
     $sort = isset($_GET['sort']) ? $_GET['sort'] : 'idx';
     
     // sql 정렬
     function get_sort_query($sort) {
-      $query = "SELECT * FROM qna_board_table";
+        $query = "SELECT * FROM qna_board_table";
+        $query .= " ORDER BY ";
     
-      $query .= " ORDER BY ";
+        if ($sort === 'view') {
+            $query .= "view DESC";
+        } else {
+            $query .= "idx DESC";
+        }
     
-      if ($sort === 'view') {
-        $query .= "view DESC";
-      } else {
-        $query .= "idx DESC";
-      }
-    
-      return $query;
+        return $query;
     }
     
     $sql = get_sort_query($sort);
@@ -89,112 +87,109 @@
             </ul>
         </nav>
     </header> -->
-    <!--코드 작성-->
-    <!--코드 작성-->
     <div id="wrap">
-    <div id="board_area"> 
-  <h1>QnA</h1>
-    <table class="list-table">
-      <thead>
-          <tr>
-              <th width="70">번호</th>
-                <th width="500">제목</th>
-                <th width="120">글쓴이</th>
-                <th width="100">조회수</th>
-            </tr>
-        </thead>
-        <?php
-            while ($board = $result->fetch_array()) {
-              $title = $board["title"];
-              if (strlen($title) > 30) {
-                $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8") . "...", $board["title"]);
-              }
-        ?>
-      <tbody>
-        <tr class="list_board">
-          <td width="70"><?php echo $board['idx']; ?></td> 
-          <td width="500"><?php 
-        $lockimg = "<img src='/img/lock.png' alt='lock' title='lock' with='20' height='20' />";
-        if($board['lock_post']=="1")
-          { ?><?php echo $lockimg;
-           }?><a href="qna_board_detail.php?idx=<?php echo $board["idx"];?>"><?php echo $title; ?></a></td>
-          <td width="120"><?php echo $board['name']?></td>
-          <td width="100"><?php echo $board['view']; ?></td>
-        </tr>
-      </tbody>
-      <?php } ?>
-    </table>
-    <?php
-      if ($is_user) {
-        ?>
-    <div id="write_btn">
-      <a href="qna_board_write.php"><button>글쓰기</button></a>
-    </div> <?php } ?>
-  </div>
-  <div id="search_box">
-    <form action="qna_board_search.php" method="get">
-      <select name="search_option">
-        <option value="title">제목</option>
-        <option value="name">작성자</option>
-        <option value="content">내용</option>
-      </select>
-      <input type="text" name="search" size="40" required="required" /> <button class="write">검색</button>
-    </form>
+        <div id="board_area"> 
+            <h1>QnA</h1>
+            <table class="list-table">
+                <thead>
+                    <tr>
+                        <th width="70">번호</th>
+                        <th width="500">제목</th>
+                        <th width="120">글쓴이</th>
+                        <th width="100">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        while ($board = $result->fetch_array()) {
+                            $title = $board["title"];
+                            if (strlen($title) > 30) {
+                                $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8") . "...", $board["title"]);
+                            }
+                    ?>
+                    <tr class="list_board">
+                        <td width="70"><?php echo $board['idx']; ?></td> 
+                        <td width="500"><?php 
+                            $lockimg = "<img src='/img/lock.png' alt='lock' title='lock' width='20' height='20' />";
+                            if($board['lock_post']=="1"){ 
+                                echo $lockimg;
+                            }
+                        ?><a href="qna_board_detail.php?idx=<?php echo $board["idx"];?>"><?php echo $title; ?></a></td>
+                        <td width="120"><?php echo $board['name']?></td>
+                        <td width="100"><?php echo $board['view']; ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+            <?php if ($is_user) { ?>
+            <div id="write_btn">
+                <a href="qna_board_write.php"><button>글쓰기</button></a>
+            </div>
+            <?php } ?>
+        </div>
+        <div id="search_box">
+            <form action="qna_board_search.php" method="get">
+                <select name="search_option">
+                    <option value="title">제목</option>
+                    <option value="name">작성자</option>
+                    <option value="content">내용</option>
+                </select>
+                <input type="text" name="search" size="40" required="required" /> <button class="write">검색</button>
+            </form>
+        </div>
     </div>
-      </div>
 
+    <script>
+        document.querySelectorAll('.gnb > li').forEach(li => {
+            const subMenu = li.querySelector('.sub-wrap');
+            if (subMenu) {
+                li.addEventListener('mouseover', () => subMenu.classList.add('active'));
+                li.addEventListener('mouseleave', () => subMenu.classList.remove('active'));
+            }
+        });
 
-</body>
-<script>
-    document.querySelectorAll('.gnb > li').forEach(li => {
-        const subMenu = li.querySelector('.sub-wrap');
-        if (subMenu) {
-            li.addEventListener('mouseover', () => subMenu.classList.add('active'));
-            li.addEventListener('mouseleave', () => subMenu.classList.remove('active'));
+        $(document).ready(function() {
+            var currentSortBy = "idx"; // 기본 정렬 기준은 "순번순"
+            var currentSortDir = "desc"; // 기본 정렬 방식은 내림차순
+
+            $(".sort-btn").click(function() {
+                var sortBy = $(this).data("sortby");
+
+                // 정렬 기준이 변경되었을 경우, 정렬 방식을 초기화하고 오름차순으로 변경
+                if (currentSortBy !== sortBy) {
+                    currentSortBy = sortBy;
+                    currentSortDir = "asc";
+                } else {
+                    // 정렬 기준이 이미 선택된 경우, 정렬 방식을 토글
+                    currentSortDir = currentSortDir === "asc" ? "desc" : "asc";
+                }
+
+                // 정렬 방식에 따라 화살표 모양 변경
+                $(".sort-btn").find("span").html("&darr;");
+                if (currentSortDir === "asc") {
+                    $(this).find("span").html("&uarr;");
+                } else {
+                    $(this).find("span").html("&darr;");
+                }
+
+                // Redirect to the sorted URL
+                window.location.href = "inform_board.php?sort=" + currentSortBy + "&sortdir=" + currentSortDir;
+            });
+        });
+    </script>
+
+    <style>
+        #write_btn {
+            text-align: center;
         }
-    });
 
-    $(document).ready(function() {
-  var currentSortBy = "idx"; // 기본 정렬 기준은 "순번순"
-  var currentSortDir = "desc"; // 기본 정렬 방식은 내림차순
-
-  $(".sort-btn").click(function() {
-    var sortBy = $(this).data("sortby");
-
-    // 정렬 기준이 변경되었을 경우, 정렬 방식을 초기화하고 오름차순으로 변경
-    if (currentSortBy !== sortBy) {
-      currentSortBy = sortBy;
-      currentSortDir = "asc";
-    } else {
-      // 정렬 기준이 이미 선택된 경우, 정렬 방식을 토글
-      currentSortDir = currentSortDir === "asc" ? "desc" : "asc";
-    }
-
-    // 정렬 방식에 따라 화살표 모양 변경
-    $(".sort-btn").find("span").html("&darr;");
-    if (currentSortDir === "asc") {
-      $(this).find("span").html("&uarr;");
-    } else {
-      $(this).find("span").html("&darr;");
-    }
-
-    // Redirect to the sorted URL
-    window.location.href = "inform_board.php?sort=" + currentSortBy + "&sortdir=" + currentSortDir;
-  });
-});
-
-</script>
-
-<style>
-      #write_btn{
-        text-align: center;
-    }
-
-    .write{
-        padding: 5px 10px;
-        border: none;
-        background-color: #4CAF50;
-        color: #fff;
-        cursor: pointer;
-    }
-</style>
+        .write {
+            padding: 5px 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>
