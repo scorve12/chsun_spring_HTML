@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="resultTit"><i class="fa-solid fa-circle-xmark"></i>&nbsp;과세표쥰 세율</div>
           <div class="rows">
           <div id="taxRate" class="resultTax"></div>
-          <div  class="resultLocation">원</div>
+          <div  class="resultLocation">%</div>
           </div> 
         </div> 
         </div>
