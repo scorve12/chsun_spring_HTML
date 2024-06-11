@@ -558,8 +558,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 종합소득세 계산
     let totalTax =
       ((comprehensiveIncomeNum - necessaryExpensesNum - deductionNum) *
-        taxAmount) /
-        100 -
+        taxAmount ) -
       taxCreditNum +
       localTax;
     comprehensiveTax.innerText = formatNumber(totalTax); // 최종 종합소득세 값 출력
@@ -590,18 +589,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 세율 계산 함수
     function calculateTaxRate(income) {
-      if (income <= 14000000) return income * 0.06;
-      else if (income <= 50000000) return 840000 + (income - 14000000) * 0.15;
-      else if (income <= 88000000) return 6240000 + (income - 50000000) * 0.24;
+      if (income <= 12000000) 
+        return 0.06;
+      else if (income <= 46000000) 
+        return 0.15;
+      else if (income <= 88000000) 
+        return 0.24;
       else if (income <= 150000000)
-        return 15360000 + (income - 88000000) * 0.34;
+        return 0.34;
       else if (income <= 300000000)
-        return 37060000 + (income - 150000000) * 0.38;
+        return 0.38;
       else if (income <= 500000000)
-        return 94060000 + (income - 300000000) * 0.4;
+        return 0.4;
       else if (income <= 1000000000)
-        return 174060000 + (income - 500000000) * 0.42;
-      else return 384060000 + (income - 1000000000) * 0.45;
+        return 0.42;
+      else 
+        return 0.45;
     }
 
     // 지방소득세 계산 함수
